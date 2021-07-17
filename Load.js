@@ -28,7 +28,7 @@ class Load extends Phaser.Scene {
 		this.load.rexWebFont(WebFontConfig);
 	
 		//Load
-		this.loadText = this.add.text(300, 300, "Loading game...", {fontSize: '32px', fill: 'white' });
+		this.loadText = this.add.text(300, 300, "游戏加载中...", {fontSize: '32px', fill: 'white' });
 		this.prog = this.add.text(400, 335, "0%", { fontSize: '32px', fill: 'white' });
 		
 		this.load.on('progress', function (value) {
