@@ -12,22 +12,22 @@ class Option extends Phaser.Scene {
     this.div = this.add.image(400, 75, "menuOptionDiv").setScale(1, 0.5);
 
     //info
-    this.buttonInfo = this.add.text(200, 25, "I N F O", { metrics: metrics.euphorigenic20, fontFamily: 'euphorigenic', fontSize: '20pt', color: 'white' }).setAlpha(0.75);
+    this.buttonInfo = this.add.text(200, 25, "信息", { metrics: metrics.euphorigenic20, fontFamily: 'euphorigenic', fontSize: '20pt', color: 'white' }).setAlpha(0.75);
     this.buttonInfo.x -= this.buttonInfo.width / 2;
     
-    this.text1 = this.add.text(25, 100, "(*) TREE'S HEALTH : Each red bar is equivalent to 1,000,000 life points.", { metrics: metrics.octin16, fontFamily: 'octin', fontSize: '16pt', color: '#33ccff' }).setVisible(false);
-    this.text2 = this.add.text(25, 150, "(*) TREE'S DEBUFFS : They also affect axe's imbuements", { metrics: metrics.octin16, fontFamily: 'octin', fontSize: '16pt', color: '#33ccff' }).setVisible(false);
-    this.text3 = this.add.text(25, 200, "(*) IDLE : THE OFFLINE TIME IDLEING LIMIT IS 1 HOUR", { metrics: metrics.octin16, fontFamily: 'octin', fontSize: '16pt', color: '#33ccff' }).setVisible(false);
-    this.text4 = this.add.text(25, 245, "(*) IDLE : When changing the browser's tab, it counts as idleing\nand it is also limited to one hour.", { metrics: metrics.octin16, fontFamily: 'octin', fontSize: '16pt', color: '#33ccff' }).setVisible(false);
-    this.text5 = this.add.text(25, 310, "(*) ELEMENTAL AURAS : The Axe's elemental auras boost its power\nonly against Trees that have the same type of elemental as defense.", { metrics: metrics.octin16, fontFamily: 'octin', fontSize: '16pt', color: '#33ccff' }).setVisible(false);
-    this.text6 = this.add.text(25, 370, "(*) REFORGE: It will reset your current seeds and upgrades as well!", { metrics: metrics.octin16, fontFamily: 'octin', fontSize: '16pt', color: '#33ccff' }).setVisible(false);
-    this.text7 = this.add.text(25, 410, "(*) Damage Formula: Total Damage = dmg * dmg / (dmg + def)", { metrics: metrics.octin16, fontFamily: 'octin', fontSize: '16pt', color: 'yellow' }).setVisible(false);
+    this.text1 = this.add.text(25, 100, "(*) 树的健康：每个红条相当于 1,000,000 点生命值。", { metrics: metrics.octin16, fontFamily: 'octin', fontSize: '16pt', color: '#33ccff' }).setVisible(false);
+    this.text2 = this.add.text(25, 150, "(*) 树的减益：它们也会影响斧的灌输", { metrics: metrics.octin16, fontFamily: 'octin', fontSize: '16pt', color: '#33ccff' }).setVisible(false);
+    this.text3 = this.add.text(25, 200, "(*) 放置：离线时间放置限制为 1 小时", { metrics: metrics.octin16, fontFamily: 'octin', fontSize: '16pt', color: '#33ccff' }).setVisible(false);
+    this.text4 = this.add.text(25, 245, "(*) 放置 ：切换浏览器的标签页时，它算作放置\n并且它也被限制为一小时。", { metrics: metrics.octin16, fontFamily: 'octin', fontSize: '16pt', color: '#33ccff' }).setVisible(false);
+    this.text5 = this.add.text(25, 310, "(*) 元素光环：斧子的元素光环增强了它的力量\n仅针对与防御具有相同类型元素的树。", { metrics: metrics.octin16, fontFamily: 'octin', fontSize: '16pt', color: '#33ccff' }).setVisible(false);
+    this.text6 = this.add.text(25, 370, "(*)重铸：它也会重置您当前的种子和升级！", { metrics: metrics.octin16, fontFamily: 'octin', fontSize: '16pt', color: '#33ccff' }).setVisible(false);
+    this.text7 = this.add.text(25, 410, "(*) 伤害公式：总伤害 = 伤害 * 伤害 / (伤害 + 防御)", { metrics: metrics.octin16, fontFamily: 'octin', fontSize: '16pt', color: 'yellow' }).setVisible(false);
 
     this.reset = new FullReset(this, 400, 485, 2);
 
     //credits
 
-    this.buttonCredits = this.add.text(600, 25, "C R E D I T S", { metrics: metrics.euphorigenic20, fontFamily: 'euphorigenic', fontSize: '20pt', color: 'white' }).setAlpha(0.75);
+    this.buttonCredits = this.add.text(600, 25, "鸣谢", { metrics: metrics.euphorigenic20, fontFamily: 'euphorigenic', fontSize: '20pt', color: 'white' }).setAlpha(0.75);
     this.buttonCredits.x -= this.buttonCredits.width / 2;
 
     this.creditsLink = this.add.text(400, 125, "All vectors created by freepik, ddraw, jemastock,\ncreativepack, dreamwaves, macrovector, kjpargeter,\nmacrovector-official, brgfx, rawpixel.com - www.freepik.com", { fontFamily: 'octin', fontSize: '16pt', color: 'white', align: 'center' }).setVisible(false).setAlpha(0.5).setActive(false);

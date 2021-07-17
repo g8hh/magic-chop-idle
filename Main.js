@@ -27,7 +27,7 @@ class Main extends Phaser.Scene {
 		this.listDots = {};
 		this.staminaDots();
 		
-		this.axeDmgText = this.add.text(400, 347, "DAMAGE PER CHOP", { metrics: metrics.octin10, fontFamily: 'octin', fontSize: '10pt', color: '#ABABAB' });
+		this.axeDmgText = this.add.text(400, 347, "每次砍树造成的伤害", { metrics: metrics.octin10, fontFamily: 'octin', fontSize: '10pt', color: '#ABABAB' });
 		this.axeDmgValue = this.add.text(400, 365, "0", { metrics: metrics.euphorigenic14, fontFamily: 'euphorigenic', fontSize: '14pt', color: 'white' });
 		this.axeDmgText.x -= this.axeDmgText.width/2;
 		this.axeDmgValue.x -= this.axeDmgValue.width/2;
@@ -73,7 +73,7 @@ class Main extends Phaser.Scene {
 		this.treeHardness = this.add.text(130, 100, "0", { metrics: metrics.octin14, fontFamily: 'octin', fontSize: '14pt', color: 'white' });
 		this.treeHardness.x -= this.treeHardness.width/2;
 
-		this.elementalDesc = this.add.text(790, 205, "Elemental\nDefenses", { metrics: metrics.octin10, fontFamily: 'octin', fontSize: '10pt', color: 'white', align: 'right', fontStyle: 'italic'});
+		this.elementalDesc = this.add.text(790, 205, "元素\n防御", { metrics: metrics.octin10, fontFamily: 'octin', fontSize: '10pt', color: 'white', align: 'right', fontStyle: 'italic'});
 		this.elementalDesc.x -= this.elementalDesc.width;
 
 		this.debuffRegeneration = this.add.image(35, 175, "debuffRegeneration").setDepth(1).setAlpha(0.1).setInteractive();
@@ -164,7 +164,7 @@ class Main extends Phaser.Scene {
 		
 		
 		//Others
-		this.playerWoodText = this.add.text(10, 500, "WOOD: ", { metrics: metrics.euphorigenic14, fontFamily: 'euphorigenic', fontSize: '14pt', color: '#f27440' });
+		this.playerWoodText = this.add.text(10, 500, "木头: ", { metrics: metrics.euphorigenic14, fontFamily: 'euphorigenic', fontSize: '14pt', color: '#f27440' });
 		this.playerWood = this.add.text(65, 501, "?", { metrics: metrics.octin12, fontFamily: 'octin', fontSize: '12pt', color: 'white' });
 		
 		this.fireIcon = this.add.image(15, 375, "gemFire").setDepth(1).setScale(0.5);
