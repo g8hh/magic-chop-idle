@@ -17,18 +17,18 @@ var gameAxes = {
 	//The numbers are the id used for reference in the player saved file!
 	
 	axe_1: {
-		name: "Basic Axe",
+		name: "基础斧子",
 		dmgMultiplier: 1,
-		imbueName: "NONE",
+		imbueName: "无",
 		imbueDesc: function(){
 			return "No imbuements";
 		}
 	},
 	
 	axe_2: {
-		name: "Strong Axe",
+		name: "强大的斧子",
 		dmgMultiplier: 2,
-		imbueName: "NONE",
+		imbueName: "无",
 		imbueDesc: function(){
 			return "No imbuements";
 		},
@@ -40,18 +40,18 @@ var gameAxes = {
 	},
 
 	axe_3: {
-		name: "Refined Axe",
+		name: "精致的斧子",
 		dmgMultiplier: 3,
-		imbueName: "Sharpness",
+		imbueName: "锐度",
 		imbueDesc: function(m){
 				if(m == true)
 				{
-					return "The axe gains a % of hardness\npenetration";
+					return "这把斧头增加了%的硬度\n穿透";
 				}
 				else
 				{
 					let sharplevel = ((player.imbueStats["axe_3"].level+1) * 2).toFixed(0);
-					return sharplevel + "% of hardness penetration";
+					return sharplevel + "% 硬度穿透";
 				}
 		},
 		wood: 1500,
@@ -73,18 +73,18 @@ var gameAxes = {
 	},
 
 	axe_4: {
-		name: "Witch's Axe",
+		name: "女巫之斧",
 		dmgMultiplier: 5,
-		imbueName: "Magic Dust",
+		imbueName: "魔尘",
 		imbueDesc: function(m){
 			if(m == true)
 			{
-				return "Passive % chance of generating\naxe experience per tick";
+				return "每tick产生\n斧子经验的被动百分比";
 			}
 			else
 			{
 				let magicdust = (player.imbueStats["axe_4"].level + 1);
-				return magicdust + "% chance of generating axe experience per tick";
+				return magicdust + "% 几率产生斧头经验每刻";
 			}
 		},
 		wood: 25000,
@@ -108,22 +108,22 @@ var gameAxes = {
 	axe_5: {
 		name: "Bloody Axe",
 		dmgMultiplier: 25,
-		imbueName: "Bleed",
+		imbueName: "流血",
 		imbueDesc: function(m){
 			if(m == true)
 			{
-					return "Chance of bleeding the tree in\neach chop, causing extra damage\n(Stacks if triggered consecutively)";
+					return "有几率在每次砍伐时使树流血，造成额外伤害\n（如果连续触发则叠加）";
 			}
 			else
 			{
 				let blevel = player.imbueStats["axe_5"].level + 1;
 				if(blevel == 1){
-					return "5% chance of causing 25% bleeding damage";
+					return "5% 几率造成 25% 流血伤害";
 				}
 				else if(blevel == 5 || blevel == 10 || blevel == 15 || blevel == 20){
 					let bleedingDmg = player.imbueVars.bleedingDmg * 100;
 					let bleeding = (5 + player.imbueVars.bleeding);
-					return bleeding + "% chance of causing " + bleedingDmg.toFixed(0) + "% bleeding damage";
+					return bleeding + "% 几率造成 " + bleedingDmg.toFixed(0) + "% 流血伤害";
 				}else{
 					let fixedLevel = player.imbueStats["axe_5"].level;
 					if((fixedLevel >= 5) && (fixedLevel < 10)){fixedLevel -= 1;}
@@ -132,7 +132,7 @@ var gameAxes = {
 					let bleeding = player.imbueVars.bleeding;
 					let bleedingDmg = (0.2 + (fixedLevel * 0.05)) * 100;
 
-					return bleeding + "% chance of causing " + bleedingDmg.toFixed(0) + "% bleeding damage";
+					return bleeding + "% 几率造成 " + bleedingDmg.toFixed(0) + "% 流血伤害";
 				}
 			}
 		},
@@ -165,17 +165,17 @@ var gameAxes = {
 	axe_6: {
 		name: "Alchemist Blade",
 		dmgMultiplier: 100,
-		imbueName: "Infusion",
+		imbueName: "灌输",
 		imbueDesc: function(m){
 			if(m == true)
 			{
-					return "Passive % chance of generating\nwood and gem per tick";
+					return "每刻产生\n木材和宝石的被动百分比几率";
 			}
 			else
 			{
 				let woodChance = (player.imbueStats["axe_6"].level + 1) * 4;
 				let gemChance = (Math.floor((player.imbueStats["axe_6"].level + 1) / 5)) * 4;
-				return woodChance + "% chance of generating wood per tick\n" + gemChance + "% chance of generating gem per tick";
+				return woodChance + "% 几率产生木材每刻\n" + gemChance + "% chance of generating gem per tick";
 			}
 		},
 		wood: 2500000,
@@ -202,19 +202,19 @@ var gameAxes = {
 	},
 
 	axe_7: {
-		name: "Lunar Blade",
+		name: "月刃",
 		dmgMultiplier: 250,
-		imbueName: "Purity",
+		imbueName: "纯净",
 		imbueDesc: function(m){
 			if(m == true)
 			{
-					return "Chance of ignoring a part of\nthe tree elements";
+					return "忽略部分\n树元素的机会";
 			}
 			else
 			{
 				let defChance = (player.imbueStats["axe_7"].level + 1) * 4;
 				let defBreak = ((player.imbueStats["axe_7"].level + 1) * 0.02) * 100;
-				return defChance + "% chance of ignoring " + defBreak.toFixed(0) + "% of the tree elements";
+				return defChance + "% 几率忽略 " + defBreak.toFixed(0) + "% 树的元素";
 			}
 		},
 		wood: 50000000,
@@ -237,18 +237,18 @@ var gameAxes = {
 	},
 
 	axe_8: {
-		name: "Elemental Axe",
+		name: "元素之斧",
 		dmgMultiplier: 500,
-		imbueName: "Enhance",
+		imbueName: "增强",
 		imbueDesc: function(m){
 			if(m == true)
 			{
-					return "Chance of gaining an axe aura\nboost in each chop\n(Stacks if triggered consecutively)";
+					return "有几率获得斧光环\n每次斩击提升\n（连续触发可叠加）";
 			}
 			else
 			{
 				let axeAuras = (player.imbueStats["axe_8"].level + 1) * 2;
-				return axeAuras + "% chance of gaining the double of axe's auras base values";				
+				return axeAuras + "% 获得双倍斧头光环基础值的几率";				
 			}
 		},
 		wood: 500000000,
@@ -270,13 +270,13 @@ var gameAxes = {
 	},
 
 	axe_9: {
-		name: "Seal Blade",
+		name: "封印刀片",
 		dmgMultiplier: 750,
-		imbueName: "Freedom",
+		imbueName: "自由",
 		imbueDesc: function(m){
 			if(m == true)
 			{
-					return "Chance of breaking tree's\ndebuffs in each chop\n(lasts for a time period)";
+					return "砍倒树几率\n每次砍树减益\n（持续一段时间）";
 			}
 			else
 			{
@@ -284,11 +284,11 @@ var gameAxes = {
 				if(blevel == 4 || blevel == 6 || blevel == 8 || blevel == 10){
 					let bdebuff = player.imbueVars.breakDebuff + 1;
 					let btimer = player.imbueVars.breakTimer + 2;
-					return bdebuff + "% chance of breaking free from debuffs for " + btimer + " chops";
+					return bdebuff + "% 几率摆脱自由减益 " + btimer + " 砍";
 				}else{
 					let bdebuff = player.imbueVars.breakDebuff + 1;
 					let btimer = player.imbueVars.breakTimer;
-					return bdebuff + "% chance of breaking free from debuffs for " + btimer + " chops";
+					return bdebuff + "% 几率摆脱自由减益 " + btimer + " 砍";
 				}
 			}
 		},
@@ -318,15 +318,15 @@ var gameAxes = {
 	axe_10: {
 		name: "Dragon's Blade",
 		dmgMultiplier: 999,
-		imbueName: "Fury",
+		imbueName: "愤怒",
 		imbueDesc: function(m){
 			if(m == true)
 			{
-				return "Multiply the axe's base damage";
+				return "乘以斧头的基础伤害";
 			}
 			else
 			{
-				return (player.imbueVars.basePower + 1) + "x extra base axe damage power";
+				return (player.imbueVars.basePower + 1) + "x 额外的基础斧头伤害能力";
 			}
 		},
 		wood: 9999999999,

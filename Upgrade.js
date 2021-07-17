@@ -33,11 +33,11 @@ class Upgrade extends Phaser.Scene {
 		this.doOnce = false;
 
 		//texts
-		this.playerWoodText = this.add.text(400, 465, "WOOD", { metrics: metrics.euphorigenic14, fontFamily: 'euphorigenic', fontSize: '14pt', color: '#f27440' });
+		this.playerWoodText = this.add.text(400, 465, "木头", { metrics: metrics.euphorigenic14, fontFamily: 'euphorigenic', fontSize: '14pt', color: '#f27440' });
 		this.playerWood = this.add.text(400, 490, "?", { metrics: metrics.euphorigenic20, fontFamily: 'euphorigenic', fontSize: '20pt', color: 'white' });
 		this.playerWoodText.x -= this.playerWoodText.width/2;
 		
-		this.imbueNameDesc = this.add.text(75, 325, "SELECT AN IMBUEMENT", { metrics: metrics.octin14, fontFamily: 'octin', fontSize: '14pt', color: "#ef6bff" }).setDepth(1.1);
+		this.imbueNameDesc = this.add.text(75, 325, "选择一个灌输", { metrics: metrics.octin14, fontFamily: 'octin', fontSize: '14pt', color: "#ef6bff" }).setDepth(1.1);
 		// this.imbueNameDesc.x -= this.imbueNameDesc.width/2;
 		
 		this.imbueDesc =  this.add.text(75, 355, "", { metrics: metrics.octin12, fontFamily: 'octin', fontSize: '12pt', color: '#fff68d' }).setDepth(1.1);

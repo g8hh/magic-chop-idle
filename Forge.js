@@ -38,45 +38,45 @@ class Forge extends Phaser.Scene {
 		this.airGems.x -= this.airGems.width/2;
 		
 		//Texts
-		this.playerWoodText = this.add.text(400, 465, "WOOD", { metrics: metrics.euphorigenic14, fontFamily: 'euphorigenic', fontSize: '14pt', color: '#f27440' });
+		this.playerWoodText = this.add.text(400, 465, "木头", { metrics: metrics.euphorigenic14, fontFamily: 'euphorigenic', fontSize: '14pt', color: '#f27440' });
 		this.playerWood = this.add.text(400, 490, "?", { metrics: metrics.euphorigenic20, fontFamily: 'euphorigenic', fontSize: '20pt', color: 'white' });
 		this.playerWoodText.x -= this.playerWoodText.width/2;
 		
-		this.currentText = this.add.text(175, 10, "CURRENT", { metrics: metrics.octin12, fontFamily: 'octin', fontSize: '12pt', color: '#9a9a9a' });
-		this.newText = this.add.text(625, 10, "NEXT", { metrics: metrics.octin12, fontFamily: 'octin', fontSize: '12pt', color: '#9a9a9a' });
+		this.currentText = this.add.text(175, 10, "当前", { metrics: metrics.octin12, fontFamily: 'octin', fontSize: '12pt', color: '#9a9a9a' });
+		this.newText = this.add.text(625, 10, "下一个", { metrics: metrics.octin12, fontFamily: 'octin', fontSize: '12pt', color: '#9a9a9a' });
 		this.currentText.x -= this.currentText.width/2;
 		this.newText.x -= this.newText.width/2;
 		
-		let nextAxeName = "None";
+		let nextAxeName = "无";
 		if(player.axe.id < totalAxes){nextAxeName = gameAxes["axe_"+(player.axe.id+1)].name;}
 		this.currentAxeName = this.add.text((175+25), 50, gameAxes["axe_"+player.axe.id].name, { metrics: metrics.octin16, fontFamily: 'octin', fontSize: '16pt', color: '#ff5959' });
 		this.newAxeName = this.add.text((625+25), 50, nextAxeName, { metrics: metrics.octin16, fontFamily: 'octin', fontSize: '16pt', color: '#74ffb9' });
 		
-		this.currentPower = this.add.text(175, 100, "POWER : " + (gameAxes["axe_"+player.axe.id].dmgMultiplier*100) + "%", { fontFamily: 'octin', fontSize: '13pt', color: 'white' });
+		this.currentPower = this.add.text(175, 100, "力量 : " + (gameAxes["axe_"+player.axe.id].dmgMultiplier*100) + "%", { fontFamily: 'octin', fontSize: '13pt', color: 'white' });
 		this.currentPower.x -= this.currentPower.width/2;
 		let nextAxePowerT = "0";
 		if(player.axe.id < totalAxes){nextAxePowerT = (gameAxes["axe_"+(player.axe.id+1)].dmgMultiplier*100);}
-		this.nextPower = this.add.text(625, 100, "POWER : " + nextAxePowerT + "%", { metrics: metrics.octin13, fontFamily: 'octin', fontSize: '13pt', color: 'white' });
+		this.nextPower = this.add.text(625, 100, "力量 : " + nextAxePowerT + "%", { metrics: metrics.octin13, fontFamily: 'octin', fontSize: '13pt', color: 'white' });
 		this.nextPower.x -= this.nextPower.width/2;
 		
-		this.currentImbueT = this.add.text(175, 150, "IMBUEMENT :", { metrics: metrics.octin15, fontFamily: 'octin', fontSize: '15pt', color: 'white' });
+		this.currentImbueT = this.add.text(175, 150, "灌输 :", { metrics: metrics.octin15, fontFamily: 'octin', fontSize: '15pt', color: 'white' });
 		this.currentImbueT.x -= this.currentImbueT.width;
-		this.nextImbueT = this.add.text(625, 150, "IMBUEMENT :", { metrics: metrics.octin15, fontFamily: 'octin', fontSize: '15pt', color: 'white' });
+		this.nextImbueT = this.add.text(625, 150, "灌输 :", { metrics: metrics.octin15, fontFamily: 'octin', fontSize: '15pt', color: 'white' });
 		this.nextImbueT.x -= this.nextImbueT.width;
 		this.currentImbueN = this.add.text(180, 150, gameAxes["axe_"+player.axe.id].imbueName, { metrics: metrics.octin15, fontFamily: 'octin', fontSize: '15pt', color: '#ef6bff' });
-		let nextAxeImbueN = "NONE";
+		let nextAxeImbueN = "无";
 		if(player.axe.id < totalAxes){nextAxeImbueN = gameAxes["axe_"+(player.axe.id+1)].imbueName;}
 		this.nextImbueN = this.add.text(630, 150, nextAxeImbueN, { metrics: metrics.octin15, fontFamily: 'octin', fontSize: '15pt', color: '#ef6bff' });
 		
 		this.currentImbueD = this.add.text(50, 185, gameAxes["axe_"+player.axe.id].imbueDesc(true), { metrics: metrics.octin11, fontFamily: 'octin', fontSize: '11pt', color: '#fff68d' });
-		let nextAxeImbueD = "No imbuements";
+		let nextAxeImbueD = "负担不起";
 		if(player.axe.id < totalAxes){nextAxeImbueD = gameAxes["axe_"+(player.axe.id+1)].imbueDesc(true);}
 		this.nextImbueN = this.add.text(500, 185, nextAxeImbueD, { metrics: metrics.octin11, fontFamily: 'octin', fontSize: '11pt', color: '#fff68d' });
 		
 		//cost texts
-		this.costText = this.add.text(400, 35, "COST", { metrics: metrics.octin22, fontFamily: 'octin', fontSize: '22pt', color: '#9a9a9a' });
+		this.costText = this.add.text(400, 35, "成本", { metrics: metrics.octin22, fontFamily: 'octin', fontSize: '22pt', color: '#9a9a9a' });
 		this.costText.x -= this.costText.width/2;
-		this.costWoodText = this.add.text(400, 75, "WOOD", { metrics: metrics.octin12, fontFamily: 'octin', fontSize: '12pt', color: '#f27440' });
+		this.costWoodText = this.add.text(400, 75, "木头", { metrics: metrics.octin12, fontFamily: 'octin', fontSize: '12pt', color: '#f27440' });
 		this.costWoodText.x -= this.costWoodText.width/2;
 		this.costWoodValue = this.add.text(400, 95, "?", { metrics: metrics.octin12, fontFamily: 'octin', fontSize: '12pt', color: 'white' });
 		
@@ -95,8 +95,8 @@ class Forge extends Phaser.Scene {
 		this.airGemsCost.y -= this.airGemsCost.height/2;
 		
 		
-		this.infoImbue1 = this.add.text(75, 270, "(*) Plus all previous imbuements", { metrics: metrics.octin9, fontFamily: 'octin', fontSize: '9pt', color: '#fff68d' });
-		this.infoImbue2 = this.add.text(525, 270, "(*) Plus all previous imbuements", { metrics: metrics.octin9, fontFamily: 'octin', fontSize: '9pt', color: '#fff68d' });
+		this.infoImbue1 = this.add.text(75, 270, "(*) 加上所有以前的灌输", { metrics: metrics.octin9, fontFamily: 'octin', fontSize: '9pt', color: '#fff68d' });
+		this.infoImbue2 = this.add.text(525, 270, "(*) 加上所有以前的灌输", { metrics: metrics.octin9, fontFamily: 'octin', fontSize: '9pt', color: '#fff68d' });
 	}
 	
 	

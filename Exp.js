@@ -11,7 +11,7 @@ class Exp extends Phaser.Scene {
 		// this.sceneText = this.add.text(400, 300, "EXP SCENE", { fontFamily: 'Verdana', fontSize: '30pt', color: 'white' });
 		// this.sceneText.x -= this.sceneText.width/2;
 		
-		this.axeLevel = this.add.text(400, 10, "AXE LEVEL " + player.axe.level, { metrics: metrics.octin16, fontFamily: 'octin', fontSize: '16pt', color: 'white' });
+		this.axeLevel = this.add.text(400, 10, "斧子等级 " + player.axe.level, { metrics: metrics.octin16, fontFamily: 'octin', fontSize: '16pt', color: 'white' });
 		this.axeLevel.x -= this.axeLevel.width/2;
 		
 		this.axeExpBar = this.add.image(400, 40, "menuExpStaminaB").setDepth(1);
@@ -27,12 +27,12 @@ class Exp extends Phaser.Scene {
 		
 		this.axeImg = this.add.image(400, 100, "axe1").setDepth(1);
 		
-		this.baseDamage = this.add.text(400, 135, "BASE DAMAGE : 1", { metrics: metrics.octin11, fontFamily: 'octin', fontSize: '11pt', color: '#bfbfbf' });
-		this.totalDamage = this.add.text(400, 160, "TOTAL DAMAGE : 1 (100%)", { metrics: metrics.octin11, fontFamily: 'octin', fontSize: '11pt', color: 'white' });
+		this.baseDamage = this.add.text(400, 135, "基础伤害 : 1", { metrics: metrics.octin11, fontFamily: 'octin', fontSize: '11pt', color: '#bfbfbf' });
+		this.totalDamage = this.add.text(400, 160, "总伤害 : 1 (100%)", { metrics: metrics.octin11, fontFamily: 'octin', fontSize: '11pt', color: 'white' });
 		this.baseDamage.x -= this.baseDamage.width/2;
 		this.totalDamage.x -= this.totalDamage.width/2;
 		
-		this.expPointsText = this.add.text(400, 485, "EXP POINTS", { metrics: metrics.euphorigenic18, fontFamily: 'euphorigenic', fontSize: '18pt', color: '#bfbfbf' });
+		this.expPointsText = this.add.text(400, 485, "经验值", { metrics: metrics.euphorigenic18, fontFamily: 'euphorigenic', fontSize: '18pt', color: '#bfbfbf' });
 		this.expPoints = this.add.text(400, 455, "0", { metrics: metrics.euphorigenic20, fontFamily: 'euphorigenic', fontSize: '20pt', color: 'yellow' });
 		this.expPointsText.x -= this.expPointsText.width/2;
 		this.expPoints.x -= this.expPoints.width/2;
@@ -42,17 +42,17 @@ class Exp extends Phaser.Scene {
 		this.button2 = new ExpButton(this, 400, 315, 2);
 		this.button3 = new ExpButton(this, 400, 405, 3);
 		
-		this.staminaText = this.add.text(50, 225, "S T A M I N A", { metrics: metrics.euphorigenic15, fontFamily: 'euphorigenic', fontSize: '15pt', color: '#8bff67' });
-		this.efficiencyText = this.add.text(50, 315, "E F F I C I E N C Y", { metrics: metrics.euphorigenic15, fontFamily: 'euphorigenic', fontSize: '15pt', color: '#8bff67' });
-		this.luckText = this.add.text(50, 405, "L U C K", { metrics: metrics.euphorigenic15, fontFamily: 'euphorigenic', fontSize: '15pt', color: '#8bff67' });
+		this.staminaText = this.add.text(50, 225, "耐力", { metrics: metrics.euphorigenic15, fontFamily: 'euphorigenic', fontSize: '15pt', color: '#8bff67' });
+		this.efficiencyText = this.add.text(50, 315, "效率", { metrics: metrics.euphorigenic15, fontFamily: 'euphorigenic', fontSize: '15pt', color: '#8bff67' });
+		this.luckText = this.add.text(50, 405, "幸运", { metrics: metrics.euphorigenic15, fontFamily: 'euphorigenic', fontSize: '15pt', color: '#8bff67' });
 		
 		this.staminaValue = this.add.text(200, 225, "( 1 )   ( 0 )", { metrics: metrics.euphorigenic16, fontFamily: 'euphorigenic', fontSize: '16pt', color: 'yellow' });
 		this.efficiencyValue = this.add.text(200, 315, "( 1 )", { metrics: metrics.euphorigenic16, fontFamily: 'euphorigenic', fontSize: '16pt', color: 'yellow' });
 		this.luckValue = this.add.text(200, 405, "( 1 )", { metrics: metrics.euphorigenic16, fontFamily: 'euphorigenic', fontSize: '16pt', color: 'yellow' });
 		
-		this.staminaDesc = this.add.text(410, 225, "The amount of speed between chops.", { metrics: metrics.octin11, fontFamily: 'octin', fontSize: '11pt', color: 'white' });
-		this.efficiencyDesc = this.add.text(410, 315, "The amount of exp gained per chop.", { metrics: metrics.octin11, fontFamily: 'octin', fontSize: '11pt', color: 'white' });
-		this.luckDesc = this.add.text(410, 405, "The chance of dropping loot per chop.", { metrics: metrics.octin11, fontFamily: 'octin', fontSize: '11pt', color: 'white' });
+		this.staminaDesc = this.add.text(410, 225, "斩波之间的速度量。", { metrics: metrics.octin11, fontFamily: 'octin', fontSize: '11pt', color: 'white' });
+		this.efficiencyDesc = this.add.text(410, 315, "每次砍树获得的经验值。", { metrics: metrics.octin11, fontFamily: 'octin', fontSize: '11pt', color: 'white' });
+		this.luckDesc = this.add.text(410, 405, "每次斩击掉落战利品的几率。", { metrics: metrics.octin11, fontFamily: 'octin', fontSize: '11pt', color: 'white' });
 		
 		//y correction
 		this.staminaText.y -= this.staminaText.height/2;
@@ -108,13 +108,13 @@ class Exp extends Phaser.Scene {
 		this.efficiencyValue.setText("( " + (player.axe.efficiency * (1 + player.reforged.extraEfficiency)) + " )");
 		this.luckValue.setText("( " + player.axe.luck + " )");
 		
-		this.baseDamage.setText("BASE DAMAGE : " + numberWithSpaces(player.axe.power * (1 + player.imbueVars.basePower)));
-		this.totalDamage.setText("TOTAL DAMAGE : " + numberWithSpaces(player.axe.power*gameAxes["axe_"+player.axe.id].dmgMultiplier) + 
+		this.baseDamage.setText("基础伤害 : " + numberWithSpaces(player.axe.power * (1 + player.imbueVars.basePower)));
+		this.totalDamage.setText("总伤害 : " + numberWithSpaces(player.axe.power*gameAxes["axe_"+player.axe.id].dmgMultiplier) + 
 								" (" + gameAxes["axe_"+player.axe.id].dmgMultiplier*100 + "%)");
 		this.baseDamage.x = 400 - (this.baseDamage.width/2);
 		this.totalDamage.x = 400 - (this.totalDamage.width/2);
 
-		this.axeLevel.setText("AXE LEVEL " + player.axe.level);
+		this.axeLevel.setText("斧子等级 " + player.axe.level);
 
 		this.multText.x = 75 - (this.multText.width / 2);
 		this.multText.y = 500 - (this.multText.height / 2);

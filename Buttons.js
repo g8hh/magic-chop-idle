@@ -266,7 +266,7 @@ class ExpMult extends Phaser.GameObjects.Image {
 		else if(amount_multiplier == 100)
 		{
 			amount_multiplier = 0;
-			this.scene.multText.setText("MAX");
+			this.scene.multText.setText("最大");
 		}
 		else if(amount_multiplier == 0)
 		{
@@ -474,23 +474,23 @@ class ImbueShowAll extends Phaser.GameObjects.Image {
 		//upgrades text
 		this.textToggle = false;
 
-		this.titleSharpness = scene.add.text(50, 50, "SHARPNESS : ", { metrics: metrics.octin15, fontFamily: 'octin', fontSize: '15pt', color: '#ef6bff' }).setDepth(2.2).setVisible(false);
-		this.titleMagicDust = scene.add.text(50, 100, "MAGIC DUST : ", { metrics: metrics.octin15, fontFamily: 'octin', fontSize: '15pt', color: '#ef6bff' }).setDepth(2.2).setVisible(false);
-		this.titleBloodyAxe = scene.add.text(50, 150, "BLEED : ", { metrics: metrics.octin15, fontFamily: 'octin', fontSize: '15pt', color: '#ef6bff' }).setDepth(2.2).setVisible(false);
-		this.titleAlchemistBlade = scene.add.text(50, 200, "INFUSION : ", { metrics: metrics.octin15, fontFamily: 'octin', fontSize: '15pt', color: '#ef6bff' }).setDepth(2.2).setVisible(false);
-		this.titleLunarBlade = scene.add.text(50, 250, "PURITY : ", { metrics: metrics.octin15, fontFamily: 'octin', fontSize: '15pt', color: '#ef6bff' }).setDepth(2.2).setVisible(false);
-		this.titleElementalAxe = scene.add.text(50, 300, "ENHANCE : ", { metrics: metrics.octin15, fontFamily: 'octin', fontSize: '15pt', color: '#ef6bff' }).setDepth(2.2).setVisible(false);
-		this.titleSealBlade = scene.add.text(50, 350, "FREEDOM : ", { metrics: metrics.octin15, fontFamily: 'octin', fontSize: '15pt', color: '#ef6bff' }).setDepth(2.2).setVisible(false);
-		this.titleDragonsBlade = scene.add.text(50, 400, "FURY : ", { metrics: metrics.octin15, fontFamily: 'octin', fontSize: '15pt', color: '#ef6bff' }).setDepth(2.2).setVisible(false);
+		this.titleSharpness = scene.add.text(50, 50, "锐度 : ", { metrics: metrics.octin15, fontFamily: 'octin', fontSize: '15pt', color: '#ef6bff' }).setDepth(2.2).setVisible(false);
+		this.titleMagicDust = scene.add.text(50, 100, "魔尘 : ", { metrics: metrics.octin15, fontFamily: 'octin', fontSize: '15pt', color: '#ef6bff' }).setDepth(2.2).setVisible(false);
+		this.titleBloodyAxe = scene.add.text(50, 150, "流血 : ", { metrics: metrics.octin15, fontFamily: 'octin', fontSize: '15pt', color: '#ef6bff' }).setDepth(2.2).setVisible(false);
+		this.titleAlchemistBlade = scene.add.text(50, 200, "灌输 : ", { metrics: metrics.octin15, fontFamily: 'octin', fontSize: '15pt', color: '#ef6bff' }).setDepth(2.2).setVisible(false);
+		this.titleLunarBlade = scene.add.text(50, 250, "纯净 : ", { metrics: metrics.octin15, fontFamily: 'octin', fontSize: '15pt', color: '#ef6bff' }).setDepth(2.2).setVisible(false);
+		this.titleElementalAxe = scene.add.text(50, 300, "增强 : ", { metrics: metrics.octin15, fontFamily: 'octin', fontSize: '15pt', color: '#ef6bff' }).setDepth(2.2).setVisible(false);
+		this.titleSealBlade = scene.add.text(50, 350, "自由 : ", { metrics: metrics.octin15, fontFamily: 'octin', fontSize: '15pt', color: '#ef6bff' }).setDepth(2.2).setVisible(false);
+		this.titleDragonsBlade = scene.add.text(50, 400, "愤怒 : ", { metrics: metrics.octin15, fontFamily: 'octin', fontSize: '15pt', color: '#ef6bff' }).setDepth(2.2).setVisible(false);
 
-		this.dataSharpness = scene.add.text((this.titleSharpness.x + this.titleSharpness.width), 50, ((player.imbueVars.sharpness * 100).toFixed(0) + "% of hardness penetration"), { metrics: metrics.octin15, fontFamily: 'octin', fontSize: '15pt', color: 'yellow' }).setDepth(2.2).setVisible(false);
+		this.dataSharpness = scene.add.text((this.titleSharpness.x + this.titleSharpness.width), 50, ((player.imbueVars.sharpness * 100).toFixed(0) + "% 硬度渗透"), { metrics: metrics.octin15, fontFamily: 'octin', fontSize: '15pt', color: 'yellow' }).setDepth(2.2).setVisible(false);
 		this.dataMagicDust = scene.add.text((this.titleMagicDust.x + this.titleMagicDust.width), 100, player.imbueVars.expDrop + "% chance of generating axe experience per tick", { metrics: metrics.octin15, fontFamily: 'octin', fontSize: '15pt', color: 'yellow' }).setDepth(2.2).setVisible(false);
-		this.dataBloodyAxe = scene.add.text((this.titleBloodyAxe.x + this.titleBloodyAxe.width), 150, (player.imbueVars.bleeding + "% chance of causing " + ((player.imbueVars.bleedingDmg - 1) * 100).toFixed(0) + "% bleeding damage"), { metrics: metrics.octin15, fontFamily: 'octin', fontSize: '15pt', color: 'yellow' }).setDepth(2.2).setVisible(false);
-		this.dataAlchemistBlade = scene.add.text((this.titleAlchemistBlade.x + this.titleAlchemistBlade.width), 200, player.imbueVars.woodDrop + "% / " + player.imbueVars.gemDrop + "% chance of generating wood/gem per tick", { metrics: metrics.octin15, fontFamily: 'octin', fontSize: '15pt', color: 'yellow' }).setDepth(2.2).setVisible(false);
-		this.dataLunarBlade = scene.add.text((this.titleLunarBlade.x + this.titleLunarBlade.width), 250, player.imbueVars.defChance + "% chance of ignoring " + ((player.imbueVars.defBreak - 1) * 100).toFixed(0) + "% of the tree elements", { metrics: metrics.octin15, fontFamily: 'octin', fontSize: '15pt', color: 'yellow' }).setDepth(2.2).setVisible(false);
-		this.dataElementalAxe = scene.add.text((this.titleElementalAxe.x + this.titleElementalAxe.width), 300, player.imbueVars.auraChance + "% chance of gain the double of axe's auras base values", { metrics: metrics.octin15, fontFamily: 'octin', fontSize: '15pt', color: 'yellow' }).setDepth(2.2).setVisible(false);
-		this.dataSealBlade = scene.add.text((this.titleSealBlade.x + this.titleSealBlade.width), 350, player.imbueVars.breakDebuff + "% chance of breaking free from debuffs for " + player.imbueVars.breakTimer + " chops", { metrics: metrics.octin15, fontFamily: 'octin', fontSize: '15pt', color: 'yellow' }).setDepth(2.2).setVisible(false);
-		this.dataDragonsBlade = scene.add.text((this.titleDragonsBlade.x + this.titleDragonsBlade.width), 400, player.imbueVars.basePower + "x extra base axe damage power", { metrics: metrics.octin15, fontFamily: 'octin', fontSize: '15pt', color: 'yellow' }).setDepth(2.2).setVisible(false);
+		this.dataBloodyAxe = scene.add.text((this.titleBloodyAxe.x + this.titleBloodyAxe.width), 150, (player.imbueVars.bleeding + "% chance of causing " + ((player.imbueVars.bleedingDmg - 1) * 100).toFixed(0) + "% 流血伤害"), { metrics: metrics.octin15, fontFamily: 'octin', fontSize: '15pt', color: 'yellow' }).setDepth(2.2).setVisible(false);
+		this.dataAlchemistBlade = scene.add.text((this.titleAlchemistBlade.x + this.titleAlchemistBlade.width), 200, player.imbueVars.woodDrop + "% / " + player.imbueVars.gemDrop + "% 几率产生 木头/宝石 每tick", { metrics: metrics.octin15, fontFamily: 'octin', fontSize: '15pt', color: 'yellow' }).setDepth(2.2).setVisible(false);
+		this.dataLunarBlade = scene.add.text((this.titleLunarBlade.x + this.titleLunarBlade.width), 250, player.imbueVars.defChance + "% 忽略几率 " + ((player.imbueVars.defBreak - 1) * 100).toFixed(0) + "% 树元素", { metrics: metrics.octin15, fontFamily: 'octin', fontSize: '15pt', color: 'yellow' }).setDepth(2.2).setVisible(false);
+		this.dataElementalAxe = scene.add.text((this.titleElementalAxe.x + this.titleElementalAxe.width), 300, player.imbueVars.auraChance + "% 几率获得双倍斧头光环基础值", { metrics: metrics.octin15, fontFamily: 'octin', fontSize: '15pt', color: 'yellow' }).setDepth(2.2).setVisible(false);
+		this.dataSealBlade = scene.add.text((this.titleSealBlade.x + this.titleSealBlade.width), 350, player.imbueVars.breakDebuff + "% 脱离减益的几率 " + player.imbueVars.breakTimer + " chops", { metrics: metrics.octin15, fontFamily: 'octin', fontSize: '15pt', color: 'yellow' }).setDepth(2.2).setVisible(false);
+		this.dataDragonsBlade = scene.add.text((this.titleDragonsBlade.x + this.titleDragonsBlade.width), 400, player.imbueVars.basePower + "x 额外的基础斧头伤害能力", { metrics: metrics.octin15, fontFamily: 'octin', fontSize: '15pt', color: 'yellow' }).setDepth(2.2).setVisible(false);
 
 
 		this.setInteractive({useHandCursor: true});
@@ -557,7 +557,7 @@ class SelectUpgradeButton extends Phaser.GameObjects.Image {
 		
 		this.activated = false;
 
-		this.imbuementName = this.scene.add.text(75, y, "IMBUEMENT", { metrics: metrics.octin16, fontFamily: 'octin', fontSize: '16pt', color: tcolor }).setDepth(1.1).setVisible(false);
+		this.imbuementName = this.scene.add.text(75, y, "灌输", { metrics: metrics.octin16, fontFamily: 'octin', fontSize: '16pt', color: tcolor }).setDepth(1.1).setVisible(false);
 		this.imbuementName.y -= this.imbuementName.height/2;
 		
 		this.imbuePriceW = this.scene.add.text(725, y, "W", { metrics: metrics.octin11, fontFamily: 'euphorigenic', fontSize: '11pt', color: '#f27440' }).setDepth(1.1).setVisible(false);
@@ -627,25 +627,25 @@ class SelectAuraButton extends Phaser.GameObjects.Image {
 		this.scene.priceValue.setVisible(true);
 		
 		if(this.id == 1){
-			this.scene.selectName.setText("FIRE ELEMENT AURA\n+100%\nGreatly increases damage against trees with fire resistence");
+			this.scene.selectName.setText("火元素光环\n+100%\大幅增加对具有火抗性的树木的伤害");
 			this.scene.selectName.setColor("#fe6767");
 			this.scene.priceTag.setTexture("gemFire");
 			this.scene.priceValue.setText(numberWithSpaces(player.priceElem.fire));
 			this.scene.buyButton.id = this.id;
 		}else if(this.id == 2){
-			this.scene.selectName.setText("WATER ELEMENT AURA\n+100%\nGreatly increases damage against trees with water resistence");
+			this.scene.selectName.setText("水元素光环\n+100%\大幅增加对水属性树木的伤害");
 			this.scene.selectName.setColor("#759bff");
 			this.scene.priceTag.setTexture("gemWater");
 			this.scene.priceValue.setText(numberWithSpaces(player.priceElem.water));
 			this.scene.buyButton.id = this.id;
 		}else if(this.id == 3){
-			this.scene.selectName.setText("EARTH ELEMENT AURA\n+100%\nGreatly increases damage against trees with earth resistence");
+			this.scene.selectName.setText("土元素光环\n+100%\大幅增加对土抗性树木的伤害");
 			this.scene.selectName.setColor("#67fe83");
 			this.scene.priceTag.setTexture("gemEarth");
 			this.scene.priceValue.setText(numberWithSpaces(player.priceElem.earth));
 			this.scene.buyButton.id = this.id;
 		}else if(this.id == 4){
-			this.scene.selectName.setText("AIR ELEMENT AURA\n+100%\nGreatly increases damage against trees with air resistence");
+			this.scene.selectName.setText("气元素光环\n+100%\大幅增加对气抗性树木的伤害");
 			this.scene.selectName.setColor("#fff372");
 			this.scene.priceTag.setTexture("gemAir");
 			this.scene.priceValue.setText(numberWithSpaces(player.priceElem.air));
@@ -802,7 +802,7 @@ class ResetCheck extends Phaser.GameObjects.Image {
 		scene.add.existing(this);
 		this.scene = scene;
 		
-		this.infoText = scene.add.text(660, 65, "Check this box if you also want\nreset your seeds and upgrades!", { metrics: metrics.octin11, fontFamily: 'octin', fontSize: '11pt', color: '#ff1a75', align: 'center', fontStyle: 'bold' });
+		this.infoText = scene.add.text(660, 65, "如果您还想\n重置种子和升级，请选中此框！", { metrics: metrics.octin11, fontFamily: 'octin', fontSize: '11pt', color: '#ff1a75', align: 'center', fontStyle: 'bold' });
 		this.infoText.x -= this.infoText.width / 2;
 
 		this.setDepth(1.1);
@@ -851,7 +851,7 @@ class ReforgedButton extends Phaser.GameObjects.Image {
 
 		this.id = id;
 		
-		this.infoText = scene.add.text(400, 10, "(*) This will reset all your axe's status and progress!", { metrics: metrics.octin12, fontFamily: 'octin', fontSize: '12pt', color: '#ff3333' }).setVisible(false);
+		this.infoText = scene.add.text(400, 10, "(*) 这将重置您所有斧头的状态和进度！", { metrics: metrics.octin12, fontFamily: 'octin', fontSize: '12pt', color: '#ff3333' }).setVisible(false);
 		this.infoText.x -= this.infoText.width / 2;
 
 		this.setDepth(1.1);

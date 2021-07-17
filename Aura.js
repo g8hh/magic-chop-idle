@@ -40,7 +40,7 @@ class Aura extends Phaser.Scene {
 		this.airElemIcon = new SelectAuraButton(this, 700, 75, "elementalAir", 4);
 		
 		this.selectHighlight = this.add.image(100, 75, "menuAuraSelect").setDepth(0.9).setVisible(false);
-		this.selectText = this.add.text(400, 290, "S E L E C T   AN   E L E M E N T   A B O V E", { metrics: metrics.octin12, fontFamily: 'octin', fontSize: '12pt', color: 'yellow' }).setDepth(1.1);
+		this.selectText = this.add.text(400, 290, "选择上面的一个元素", { metrics: metrics.octin12, fontFamily: 'octin', fontSize: '12pt', color: 'yellow' }).setDepth(1.1);
 		this.selectText.x -= this.selectText.width/2;
 		
 		this.selectName = this.add.text(400, 250, "", { metrics: metrics.octin15, fontFamily: 'octin', fontSize: '15pt', color: 'white', align: 'center' }).setDepth(1.1);

@@ -32,7 +32,7 @@ class Main extends Phaser.Scene {
 		this.axeDmgText.x -= this.axeDmgText.width/2;
 		this.axeDmgValue.x -= this.axeDmgValue.width/2;
 		
-		this.axeLevel = this.add.text(275, 435, "Lv. " + player.axe.level, { metrics: metrics.euphorigenic11, fontFamily: 'euphorigenic', fontSize: '11pt', color: 'white' });
+		this.axeLevel = this.add.text(275, 435, "等级 " + player.axe.level, { metrics: metrics.euphorigenic11, fontFamily: 'euphorigenic', fontSize: '11pt', color: 'white' });
 		
 		this.axeAuraFire = this.add.image(775, 375, "elementalFire").setDepth(1).setScale(0.4);
 		this.axeAuraWater = this.add.image(775, 415, "elementalWater").setDepth(1).setScale(0.4);
@@ -94,28 +94,28 @@ class Main extends Phaser.Scene {
 		this.debuffDesc.x -= this.debuffDesc.width / 2;
 
 		this.debuffRegeneration.on("pointerover", function(pointer){
-			this.debuffTitle.setText("Regeneration");
-			this.debuffDesc.setText("Tree recovers life overtime");
+			this.debuffTitle.setText("再生");
+			this.debuffDesc.setText("树超时恢复生命");
 		}, this);
 
 		this.debuffExhaustion.on("pointerover", function(pointer){
-			this.debuffTitle.setText("Exhaustion");
-			this.debuffDesc.setText("Axe loses half of it's stamina");
+			this.debuffTitle.setText("枯竭");
+			this.debuffDesc.setText("斧头失去一半的耐力");
 		}, this);
 
 		this.debuffGreedy.on("pointerover", function(pointer){
-			this.debuffTitle.setText("Greedy");
-			this.debuffDesc.setText("Axe loses half of\nit's dropping chance");
+			this.debuffTitle.setText("贪婪");
+			this.debuffDesc.setText("斧头的掉落几率减少一半");
 		}, this);
 
 		this.debuffHollow.on("pointerover", function(pointer){
-			this.debuffTitle.setText("Hollow");
-			this.debuffDesc.setText("Axe loses half of\nit's efficiency/exp gain");
+			this.debuffTitle.setText("空洞");
+			this.debuffDesc.setText("斧头损失一半的效率/经验增益");
 		}, this);
 
 		this.debuffBlessedRoot.on("pointerover", function(pointer){
-			this.debuffTitle.setText("Blessed Root");
-			this.debuffDesc.setText("Axe loses half of all\nit's elements aura power");
+			this.debuffTitle.setText("幸福的根源");
+			this.debuffDesc.setText("斧头失去所有一半\n它的元素光环能量");
 		}, this);
 
 		this.debuffRegeneration.on("pointerout", function(pointer){

@@ -397,7 +397,7 @@ class Global extends Phaser.Scene {
 			player.axe.power += (1 + player.reforged.extraDmgScaling);
 			
 			//text updates
-			this.mainScene.axeLevel.setText("Lv. " + player.axe.level);
+			this.mainScene.axeLevel.setText("等级. " + player.axe.level);
 			
 		}
 	}
