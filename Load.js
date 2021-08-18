@@ -8,7 +8,7 @@ class Load extends Phaser.Scene {
 				files: [{
 					type: 'plugin',
 					key: 'rexwebfontloaderplugin',
-					url: 'https://raw.githubusercontent.com/rexrainbow/phaser3-rex-notes/master/dist/rexwebfontloaderplugin.min.js',
+					url: 'rexwebfontloaderplugin.min.js',
 					start: true
 				}]
 			}
