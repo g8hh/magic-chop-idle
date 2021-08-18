@@ -175,7 +175,7 @@ var gameAxes = {
 			{
 				let woodChance = (player.imbueStats["axe_6"].level + 1) * 4;
 				let gemChance = (Math.floor((player.imbueStats["axe_6"].level + 1) / 5)) * 4;
-				return woodChance + "% 几率产生木材每刻\n" + gemChance + "% chance of generating gem per tick";
+				return woodChance + "% 几率产生木材每刻\n" + gemChance + "% 的几率产生宝石每tick";
 			}
 		},
 		wood: 2500000,
