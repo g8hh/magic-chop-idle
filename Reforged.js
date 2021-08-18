@@ -55,7 +55,7 @@ class Reforged extends Phaser.Scene {
 		this.buttonDmg = this.add.text(15, 210, "+ " + (player.reforged.extraDmgScaling + 1) + " 基础斧头伤害每升一级", { metrics: metrics.euphorigenic22, fontFamily: 'euphorigenic', fontSize: '22pt', color: 'white' });
 		this.buttonEff = this.add.text(15, 260, "x " + (player.reforged.extraEfficiency + 1) + " 效率乘数", { metrics: metrics.euphorigenic22, fontFamily: 'euphorigenic', fontSize: '22pt', color: 'white' });
 		this.buttonDrop = this.add.text(15, 310, "x " + (player.reforged.extraLoot + 1) + " 木头/宝石 掉落乘数", { metrics: metrics.euphorigenic22, fontFamily: 'euphorigenic', fontSize: '22pt', color: 'white' });
-		this.buttonBars = this.add.text(15, 360, (player.reforged.extraStaminaBar) + " / 25 额外的耐力棒", { metrics: metrics.euphorigenic22, fontFamily: 'euphorigenic', fontSize: '22pt', color: 'white' });
+		this.buttonBars = this.add.text(15, 360, (player.reforged.extraStaminaBar) + " / 25 额外的耐力条", { metrics: metrics.euphorigenic22, fontFamily: 'euphorigenic', fontSize: '22pt', color: 'white' });
 
 		// resetSeedsStatus = false; //reset when the scene restart!
 		// this.resetSeeds = new ResetCheck(this, 660, 50);
