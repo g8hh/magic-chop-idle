@@ -81,7 +81,7 @@ class FullReset extends Phaser.GameObjects.Image {
 	}
 	
 	clicked(pointer){			
-	
+	if(confirm("此操作将删除你的所有游戏进度，相当于从头开始玩!你确定要重玩吗？")){
 		player = null;
 		playerInitialize();
 		savePlayer();
@@ -98,6 +98,8 @@ class FullReset extends Phaser.GameObjects.Image {
 		{
 			this.scene.sys.scenePlugin.wake("globalScene");
 		}
+        
+    }
 
 	}
 	
